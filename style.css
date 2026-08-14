@@ -1,0 +1,1016 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pacifico&display=swap');
+
+
+/* ========================================
+   COLOR SYSTEM — CALF BLUE
+======================================== */
+
+:root {
+    --blue-main: #123D8F;
+    --blue-light: #1E55B5;
+    --blue-dark: #08265F;
+    --blue-deep: #061A42;
+
+    --white: #F7F8FA;
+    --gray: #BFC7D3;
+    --gray-dark: #687589;
+
+    --red: #D71920;
+    --red-light: #F2383F;
+    --red-dark: #A80F15;
+}
+
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+
+    background: var(--blue-deep);
+
+    color: var(--white);
+
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 28px 4.5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 100;
+
+    background:
+        linear-gradient(
+            rgba(3, 15, 40, .75),
+            transparent
+        );
+}
+
+
+/* LOGO */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: .5px;
+}
+
+.logo span {
+
+    font-size: 22px;
+}
+
+
+/* MENU */
+
+.menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 45px;
+}
+
+.menu a {
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    transition: .3s;
+}
+
+.menu a:hover {
+
+    color: var(--red-light);
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   HAMBURGER
+======================================== */
+
+.hamburger {
+
+    width: 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    cursor: pointer;
+}
+
+.hamburger span {
+
+    width: 100%;
+
+    height: 2px;
+
+    background: var(--red);
+
+    transition: .3s;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+
+    position: relative;
+
+    height: 100vh;
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+
+    /*
+       Kalau mau pakai foto kopi:
+       ganti "hero.jpg" sesuai nama foto.
+    */
+
+    background-image:
+
+        linear-gradient(
+            135deg,
+            rgba(6, 26, 66, .88),
+            rgba(18, 61, 143, .72)
+        ),
+
+        url("kopi.jpg");
+
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+/* HERO BLUE OVERLAY */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            transparent 10%,
+            rgba(4, 18, 46, .4)
+        );
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding-top: 50px;
+
+    width: 90%;
+}
+
+
+/* SMALL TEXT */
+
+.eyebrow {
+
+    margin-bottom: 18px;
+
+    color: #DCE8FF;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+}
+
+
+/* MAIN TITLE */
+
+.hero h1 {
+
+    font-family: "Pacifico", cursive;
+
+    font-size:
+        clamp(
+            100px,
+            17vw,
+            250px
+        );
+
+    font-weight: 400;
+
+    line-height: .8;
+
+    color: white;
+
+    text-shadow:
+
+        0 8px 25px
+        rgba(0,0,0,.35),
+
+        0 0 50px
+        rgba(0,0,0,.15);
+}
+
+
+/* SUBTITLE */
+
+.subtitle {
+
+    margin-top: 32px;
+
+    color: #DDE6F5;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    font-weight: 500;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 28px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        .3s ease;
+}
+
+
+/* PRIMARY */
+
+.btn-primary {
+
+    background: white;
+
+    color: var(--blue-dark);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.2);
+}
+
+.btn-primary:hover {
+
+    background: var(--red);
+
+    color: white;
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* OUTLINE */
+
+.btn-outline {
+
+    border:
+        1px solid
+        rgba(255,255,255,.65);
+
+    color: white;
+
+    background:
+        rgba(255,255,255,.05);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+.btn-outline:hover {
+
+    background: var(--red);
+
+    border-color: var(--red);
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* ========================================
+   SCROLL
+======================================== */
+
+.scroll {
+
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color: #C7D4E8;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-align: center;
+}
+
+.scroll span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--red-light);
+
+    font-size: 20px;
+}
+
+
+/* ========================================
+   SERVICE
+======================================== */
+
+.service {
+
+    padding:
+        120px 8%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--blue-dark),
+            var(--blue-main)
+        );
+
+    text-align: center;
+}
+
+
+/* SECTION LABEL */
+
+.section-label {
+
+    margin-bottom: 15px;
+
+    color: var(--red-light);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+/* TITLE */
+
+.service h2 {
+
+    margin-bottom: 65px;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            68px
+        );
+
+    line-height: 1;
+
+    color: white;
+}
+
+
+/* ========================================
+   CARDS
+======================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* CARD */
+
+.card {
+
+    padding:
+        45px 30px;
+
+    min-height: 270px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    backdrop-filter:
+        blur(8px);
+
+    transition:
+        .35s ease;
+}
+
+.card:hover {
+
+    transform:
+        translateY(-10px);
+
+    background:
+        rgba(255,255,255,.12);
+
+    border-color:
+        rgba(255,255,255,.3);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.2);
+}
+
+
+/* CARD ICON */
+
+.card-icon {
+
+    margin-bottom: 22px;
+
+    color: var(--red);
+
+    font-size: 36px;
+
+    filter:
+        drop-shadow(
+            0 5px 10px
+            rgba(215,25,32,.3)
+        );
+}
+
+
+/* CARD TITLE */
+
+.card h3 {
+
+    margin-bottom: 14px;
+
+    color: white;
+
+    font-size: 19px;
+}
+
+
+/* CARD TEXT */
+
+.card p {
+
+    max-width: 280px;
+
+    color: #CBD6E6;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.about {
+
+    padding:
+        120px 8%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    background:
+        #F3F5F8;
+
+    color:
+        var(--blue-dark);
+}
+
+
+/* ABOUT LABEL */
+
+.about .section-label {
+
+    color:
+        var(--red);
+}
+
+
+/* ABOUT TITLE */
+
+.about h2 {
+
+    font-family:
+        Georgia, serif;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            70px
+        );
+
+    line-height: 1;
+}
+
+
+/* ABOUT TEXT */
+
+.about-text {
+
+    max-width: 550px;
+
+    color:
+        #59677B;
+
+    font-size: 15px;
+
+    line-height: 2;
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact {
+
+    padding:
+        120px 20px;
+
+    text-align:
+        center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #061A42,
+            #123D8F
+        );
+}
+
+
+/* CONTACT TITLE */
+
+.contact h2 {
+
+    margin-bottom:
+        20px;
+
+    font-family:
+        Georgia, serif;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            70px
+        );
+
+    line-height:
+        1;
+}
+
+
+/* CONTACT TEXT */
+
+.contact > p:not(.section-label) {
+
+    margin-bottom:
+        32px;
+
+    color:
+        #C4D0E0;
+
+    font-size:
+        14px;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    padding:
+        25px 8%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    background:
+        #04122E;
+
+    color:
+        #8998AF;
+
+    font-size:
+        11px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+
+    /* NAVBAR */
+
+    .navbar {
+
+        padding:
+            22px 6%;
+    }
+
+
+    /* MOBILE MENU */
+
+    .menu {
+
+        position:
+            absolute;
+
+        top:
+            75px;
+
+        left:
+            5%;
+
+        right:
+            5%;
+
+        padding:
+            28px;
+
+        display:
+            none;
+
+        flex-direction:
+            column;
+
+        gap:
+            25px;
+
+        background:
+            rgba(6,26,66,.97);
+
+        border:
+            1px solid
+            rgba(255,255,255,.1);
+
+        border-radius:
+            16px;
+
+        backdrop-filter:
+            blur(15px);
+
+        box-shadow:
+            0 20px 50px
+            rgba(0,0,0,.3);
+    }
+
+
+    .menu.active {
+
+        display:
+            flex;
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height:
+            600px;
+
+        background-position:
+            center;
+    }
+
+
+    .hero-content {
+
+        padding-top:
+            20px;
+    }
+
+
+    .eyebrow {
+
+        font-size:
+            8px;
+
+        letter-spacing:
+            3px;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            100px;
+    }
+
+
+    .subtitle {
+
+        margin-top:
+            25px;
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            2px;
+    }
+
+
+    /* BUTTON */
+
+    .buttons {
+
+        width:
+            210px;
+
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
+
+        flex-direction:
+            column;
+    }
+
+
+    .btn {
+
+        width:
+            100%;
+    }
+
+
+    /* SERVICE */
+
+    .service {
+
+        padding:
+            90px 7%;
+    }
+
+
+    .service h2 {
+
+        margin-bottom:
+            45px;
+    }
+
+
+    .cards {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            18px;
+    }
+
+
+    .card {
+
+        min-height:
+            230px;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            40px;
+
+        padding:
+            90px 8%;
+    }
+
+
+    .about-text {
+
+        font-size:
+            14px;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+
+        padding:
+            90px 8%;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+
+        text-align:
+            center;
+
+        padding:
+            25px 6%;
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL PHONE
+======================================== */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+
+        font-size:
+            82px;
+    }
+
+    .eyebrow {
+
+        font-size:
+            7px;
+    }
+
+    .logo {
+
+        font-size:
+            12px;
+    }
+
+}
